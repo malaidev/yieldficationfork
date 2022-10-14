@@ -1,0 +1,53 @@
+.sidebar {
+    padding: 1rem;
+    height: 88vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    .sidebar-portfolio {
+        margin: auto;
+        --tw-bg-opacity: 1;
+        background-color: rgba(17,20,61,var(--tw-bg-opacity));
+        color: #fff;
+        border-radius: 1em;
+        padding: 1rem;
+        svg {
+            --tw-bg-opacity: 1;
+            stroke: #fff !important;
+            fill: rgba(218,49,174,var(--tw-bg-opacity));
+        }
+    }
+    .staking-item {
+        --tw-border-opacity: 1;
+        border: 1px solid rgba(229,229,229,var(--tw-border-opacity));
+        margin: auto;
+        padding: 0.8rem;
+        padding-left: 1.3rem;
+        overflow-wrap: anywhere;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+    }
+}
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+    background: #008ae8;
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #008ae8; 
+}
