@@ -1,0 +1,13 @@
+.customButton {
+    --tw-text-opacity: 1;
+    color: rgba(255,255,255,var(--tw-text-opacity));
+    --tw-bg-opacity: 0.8;
+    background-color: rgba(218,49,174,var(--tw-bg-opacity)) !important;
+    border: none !important;
+    border-radius: 1.5rem !important;
+    padding:0 20px;
+    font-weight: bold;
+}
+.customButton:hover {
+    --tw-bg-opacity: 1
+}
