@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import cls from 'classnames';
 import { Outlet, Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Header from './Header';
@@ -7,13 +8,24 @@ import SideBar from './SideBar';
 import '../scss/layout.scss';
 
 const Home = (props) => {
+    const [theme, setTheme] = useState('light');
+
     useEffect(() => {
         console.log("--------- home --------")
     }, [])
+
+    const toggleTheme = () => {
+        if (theme === 'light') {
+            setTheme('dark')
+        } else {
+            setTheme('light')
+        }
+    }
+
    return (
     <>
-        <div className="main d-flex w-100 dark-mode">
-            <MenuBar />
+        <div className={cls('main', 'd-flex', 'w-100', 'dark-mode', theme)}>
+            <MenuBar toggleTheme={toggleTheme} modeState={theme} />
             <div className="app-container">
                 <Header />
                 <Row>

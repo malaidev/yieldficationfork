@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import { FaGripLines } from 'react-icons/fa';
-import { HiOutlineMenuAlt2 } from 'react-icons/hi';
+import { HiOutlineMenuAlt2, HiMenuAlt2 } from 'react-icons/hi';
 import { Nav, Navbar } from 'react-bootstrap';
 import CustomButton from './Button';
 import { IoDiamondOutline } from "react-icons/io5";
@@ -33,7 +33,7 @@ function Header() {
     <Navbar bg="light" expand="lg">
       <Container className="d-flex align-items-center justify-content-between">
         {
-          windowSize.width <= 1024 && <div className="" style={{borderRight:'1px solid #706464  '}}><Button onClick={handleHamburger} className="btn-hamburger position-relative" style={{zIndex: 10}}><HiOutlineMenuAlt2 /></Button></div>
+          windowSize.width <= 1024 && <div className="hamburger-area"><Button onClick={handleHamburger} className="btn-hamburger position-relative"><HiMenuAlt2 /></Button></div>
         }
         <Navbar.Brand className="ft-bold ml-4" href="#home">Dashboard</Navbar.Brand>
         <div className="d-flex gap-2" id="basic-navbar-nav">
