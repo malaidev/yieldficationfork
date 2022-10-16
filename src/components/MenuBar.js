@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegGrinStars, FaGripLines, FaTimes } from "react-icons/fa";
-import { BsCardImage } from "react-icons/bs";
+import { BsCardImage, BsBriefcaseFill, BsStars, BsBarChartLineFill } from "react-icons/bs";
 import { RiDatabase2Fill, RiDashboardFill } from 'react-icons/ri';
+import { GiStripedSun } from 'react-icons/gi';
 import { Col, Button } from 'react-bootstrap';
 import { getWindowDimensions } from '../utils/GlobalFuns';
 import logo from '../assets/logo.png';
 import { MenuContext } from '../context/MenuConnectContext';
+import cls from 'classnames';
 
 const MenuBar = (props) => {
     const [windowSize, setWindowSize] = useState(getWindowDimensions());
@@ -24,7 +26,7 @@ const MenuBar = (props) => {
         };
     }, []);
     useEffect(() => {
-        console.log(" ------ show data ------- ", show)
+        
     })
     const handleHamburger = () => {
         setShow(!show);
@@ -34,12 +36,12 @@ const MenuBar = (props) => {
             {
                 windowSize.width >= 1024 ?    
                     <Col className="menu-content">
-                        <Col className="py-3">
+                        <Col className="py-3 mt-2">
                             <Link to="/dashboard">
                                 <img src={logo} width="25"/>
                             </Link>
                         </Col>
-                        <Col className="menubar d-flex flex-column mt-5 gap-5">
+                        <Col className="menubar d-flex flex-column mt-5 mb-3 gap-5">
                             <Link className="active" to="/">
                                 <RiDashboardFill/>
                             </Link>
@@ -50,16 +52,16 @@ const MenuBar = (props) => {
                                 <BsCardImage/>
                             </Link>
                             <Link to="/">
-                                <FaRegGrinStars/>
+                                <BsBriefcaseFill/>
                             </Link>
                             <Link to="/">
-                                <FaRegGrinStars/>
+                                <BsBarChartLineFill/>
                             </Link>
                             <Link to="/">
-                                <FaRegGrinStars/>
+                                <BsStars/>
                             </Link>
-                            <Link to="/">
-                                <FaRegGrinStars/>
+                            <Link onClick={props.toggleTheme} className={cls(props.modeState=='dark' &&'dark-mode-activate')}>
+                                <GiStripedSun/>
                             </Link>
                         </Col>
                     </Col>
@@ -68,36 +70,36 @@ const MenuBar = (props) => {
                     {
                         show ? 
                         <div className="d-flex mobile-menu position-absolute">
-                            <Col className="mobile-menu-button">
+                            <Col className="mobile-menu-area">
                                 <div className="menu-close-area d-flex justify-content-end">
-                                    <Button onClick={handleHamburger} className="btn-hamburger position-relative" style={{zIndex: 10}}><FaTimes /></Button>
+                                    <Button onClick={handleHamburger} className="btn-close position-relative" style={{zIndex: 10}}><FaTimes /></Button>
                                 </div>
                                 <Col className="">
                                     <Link to="/dashboard">
                                         <img src={logo} width="45"/>
                                     </Link>
                                 </Col>
-                                <Col className="menubar d-flex flex-column ps-3 pe-5 me-5 align-items-start mt-5 gap-4">
+                                <Col className="menubar d-flex flex-column ps-3 pe-5 me-5 align-items-start mt-5 mb-3 gap-4">
                                     <Link className="active" to="/">
-                                        <RiDashboardFill/> Dashboard
+                                        <RiDashboardFill/>&nbsp;&nbsp; Dashboard
                                     </Link>
                                     <Link to="/">
-                                        <RiDatabase2Fill/> Stake!
+                                        <RiDatabase2Fill/>&nbsp;&nbsp; Stake!
                                     </Link>
                                     <Link to="/">
-                                        <BsCardImage/> NFTs
+                                        <BsCardImage/>&nbsp;&nbsp; NFTs
                                     </Link>
                                     <Link to="/">
-                                        <FaRegGrinStars/> Rewards
+                                        <BsBriefcaseFill/>&nbsp;&nbsp; Rewards
                                     </Link>
                                     <Link to="/">
-                                        <FaRegGrinStars/> Futures Trading
+                                        <BsBarChartLineFill/>&nbsp;&nbsp; Futures Trading
                                     </Link>
                                     <Link to="/">
-                                        <FaRegGrinStars/> Leaderboard
+                                        <BsStars/>&nbsp;&nbsp; Leaderboard
                                     </Link>
-                                    <Link to="/">
-                                        <FaRegGrinStars/>
+                                    <Link onClick={props.toggleTheme} className={cls(props.modeState=='dark' &&'dark-mode-activate')}>
+                                        <GiStripedSun/>
                                     </Link>
                                 </Col>
                             </Col>

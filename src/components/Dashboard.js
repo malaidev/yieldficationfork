@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { IoIosWarning } from 'react-icons/io'
+import { BsFillExclamationDiamondFill } from 'react-icons/bs'
 import { getConstData } from '../utils/getConstData';
 import stake from '../assets/stake.svg';
 import vesting from '../assets/vesting.svg';
@@ -19,7 +19,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-content py-5 px-4">
             <div className="net-warn fs-5 mb-4 py-3 px-2 gap-3 d-flex align-items-center justify-content-center">
-                <IoIosWarning />
+                <BsFillExclamationDiamondFill />
                 {warnTxt}
             </div>
             <div className="d-flex flex-column align-content-center gap-5">
@@ -27,7 +27,7 @@ const Dashboard = () => {
                     <h4 className="text-start">Stats</h4>
                     <div className="my-3">
                         <Row className="d-flex flex-row align-items-stretch h-100">
-                            <Col lg={5} md={12} sm={12}>
+                            <Col lg={5} md={12} sm={12} className="mb-3">
                                <div className="price-effect rounded-5 d-flex flex-column align-items-center">
                                 <div className="fw-bold">
                                         <h1>$0.0754</h1>
@@ -51,32 +51,55 @@ const Dashboard = () => {
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
-                                            247,025,102
+                                            34,049,277
                                         </h4>
                                         <h4 className="fw-bold">(YDF)</h4>  
-                                        <h6>Total YDF Staked</h6>
+                                        <h6>Total Yield Vesting</h6>
                                         <img className="bg-img-opacity" src={vesting} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
-                                            247,025,102
+                                            1,281
                                         </h4>
-                                        <h4 className="fw-bold">(YDF)</h4>  
-                                        <h6>Total YDF Staked</h6>
+                                        <h4 className="fw-bold">(sYDF)</h4>  
+                                        <h6>Total Single Sided NFTs</h6>
                                         <img className="bg-img-opacity" src={single} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
-                                            247,025,102
+                                            184
                                         </h4>
-                                        <h4 className="fw-bold">(YDF)</h4>  
-                                        <h6>Total YDF Staked</h6>
+                                        <h4 className="fw-bold">(slYDF)</h4>  
+                                        <h6>Total LP NFTs</h6>
                                         <img className="bg-img-opacity" src={pair} />
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
                     </div>
+                </div>
+                <div>
+                    <h4 className="text-start">Platform Revenue</h4>
+                    <Row className='mt-3'>
+                        <Col lg={6} md={6} sm={12} className="pt-3">
+                            <div className="wrap-anywhere bg-gradient-to-r px-5 py-3 rounded-4 text-start">
+                                <h1 className="fs-3 fw-bold">$26,873,162,71</h1>
+                                <h6 className="fw-thin">Annual Yield Emissions</h6>
+                            </div>
+                        </Col>
+                        <Col lg={6} md={6} sm={12} className="pt-3">
+                            <div className="wrap-anywhere bg-gradient-to-r px-5 py-3 rounded-4 text-start">
+                                <h1 className="fs-3 fw-bold">$3,163.18</h1>
+                                <h6 className="fw-thin">Daily Avg Revenue</h6>
+                            </div>
+                        </Col>
+                        <Col lg={6} md={6} sm={12} className="pt-3">
+                            <div className="wrap-anywhere bg-gradient-to-r px-5 py-3 rounded-4 text-start">
+                                <h1 className="fs-3 fw-bold">$1,154,559.66</h1>
+                                <h6 className="fw-thin">Annual Normalized Revenue</h6>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
                 <div>
                     <h4 className="text-start">Latest Vests</h4>

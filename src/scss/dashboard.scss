@@ -1,9 +1,10 @@
+$warn-bg-color: rgba(255,228,230);
+$warn-color: rgba(225, 29, 71, 0.952);
+$price-bg-color: rgba(17,20,61);
 .dashboard-content {
-    
     .net-warn {
-        --warn-bg-color: 1;
-        background-color: rgba(255,228,230,var(--warn-bg-color));
-        color: rgba(225,29,72,var(--warn-bg-color));
+        background-color: $warn-bg-color;
+        color: $warn-color;
         border-radius: 1.2rem;
         svg {
             width: 3rem;
@@ -15,12 +16,10 @@
         background-repeat: no-repeat;
         background-size: 120%;
         background-position: bottom;
-        --tw-bg-opacity: 1;
-        background-color: rgba(17,20,61,var(--tw-bg-opacity));
+        background-color: $price-bg-color;
         color: white;
         padding: 3rem 5rem;
         height: 100%;
-        // min-width: 30rem;
         padding-bottom: 9em;
         .bg-gradient-txt {
             color: transparent;
@@ -45,12 +44,38 @@
                 opacity: .1;
             }
         }
+    }
+    .bg-gradient-to-r {
+        --tw-gradient-to: #fff0ff;
+        --tw-gradient-from: #fff0ff;
+        --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(255,240,255,0));
+        background-image: linear-gradient(90deg,var(--tw-gradient-stops));
+    }
+}
+.dark {
+    .dashboard-content {
+        background-color: #22233a !important;
+        color: #fff !important;
+        .net-warn {
+            $warn-bg-color: rgba(254,205,211);
+            background-color: $warn-bg-color;
+            color: rgba(136,19,55);
+            svg {
+                fill:  rgba(190, 46, 77, 0.952);               
+            }
+        }
+        .price-effect {
+            $price-bg-color: rgba(27,28,48);
+            background-color: $price-bg-color;
+        }
         .bg-gradient-to-r {
-            --tw-gradient-to: #fff0ff;
-            --tw-gradient-from: #fff0ff;
-            --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(255,240,255,0));
+            --tw-gradient-to: #161825;
+            --tw-gradient-from: #1b1c30;
+            --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(27,28,48,0));
             background-image: linear-gradient(90deg,var(--tw-gradient-stops));
+        }
+        .text-purple-300 {
+            color: #fff;
         }
     }
 }
-

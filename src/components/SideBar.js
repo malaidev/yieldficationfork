@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import CustomButton from './Button';
 import { Button } from 'react-bootstrap';
-import { FaQuestionCircle } from 'react-icons/fa';
+import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import '../scss/sidebar.scss';
 import empty from '../assets/empty.svg';
 const Sidebar = () => {
@@ -12,7 +12,7 @@ const Sidebar = () => {
                 <div className="d-flex flex-column text-start pt-1 gap-1">
                     <span className="d-flex justify-content-between">
                         My Portfolio
-                        <FaQuestionCircle />
+                        <BsFillQuestionCircleFill />
                     </span>
                     <h2 className="fw-bold mb-0">$0.00</h2>
                     <small>0 YDF</small>

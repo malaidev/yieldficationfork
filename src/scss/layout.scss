@@ -1,6 +1,23 @@
+$navbar-brand-color:  rgb(0, 0, 0);
+$menu-bg-color: #fff;
+$menu-svg-fill: rgba(17,20,61,.4705882353);
+$menu-active-svg-fill: rgba(218,49,174,1);
+$menu-hamburger-area: #706464;
+$mb-close-bg: rgb(85, 82, 82);
+$mb-menu-bg: #fff;
+$mb-menu-a-color: rgb(46, 44, 44);
+$mb-menu-svg-color: rgba(17,20,61,.4705882353);
 body {
     overflow-y: hidden;
     overflow-x: hidden;
+}
+.dark {
+    background-color: #22233a ;
+    color: #fff ;
+}
+.light {
+    background-color: #fff;
+    color: #333;
 }
 .app-container {
     flex: 17;
@@ -18,8 +35,14 @@ body {
         .container {
             border-radius: 10px;
             max-width: 1416px;
+            .hamburger-area {
+                border-right: 1px solid $menu-hamburger-area;
+                .btn-hamburger {
+                    z-index: 10;
+                }
+            }
             .navbar-brand {
-                color: rgb(0, 0, 0);
+                color: $navbar-brand-color;
             }
             .nav-link {
                 padding: 0.5rem 16px;
@@ -41,11 +64,7 @@ body {
     }
 }
 .menu-content {
-    background: #fff;
-    // position:fixed;
-    // left: 0;
-    flex: 2;
-    // width: 6vw;
+    background: $menu-bg-color;
     height: 100vh;
     overflow-y: scroll;
     overflow-x: scroll;
@@ -54,11 +73,11 @@ body {
         svg {
             width:2.3em !important;
             height: 2.3em !important;
-            fill: rgba(17,20,61,.4705882353);
+            fill: $menu-svg-fill;
         }
         .active {
             svg {
-                fill: rgba(218,49,174,1) !important
+                fill: $menu-active-svg-fill !important
             }
         }
     }
@@ -66,18 +85,15 @@ body {
 .mobile-menu {
     height: 100vh;
     .menu-close-area {
-        // --bg-menu-opacity: .5;
-        // background-color:rgb(46, 44, 44, var(--bg-menu-opacity));
         z-index: 50;
-        .btn-hamburger {
+        .btn-close {
             background:unset;
             border: unset;
-            --bg-menu-opacity: .5;
-            color:rgb(46, 44, 44, var(--bg-menu-opacity));
+            color: $mb-close-bg;
         }
     }
-    .mobile-menu-button {
-        background: #fff;
+    .mobile-menu-area {
+        background: $mb-menu-bg;
         overflow-y: scroll;
         overflow-x: hidden;
         z-index: 30;
@@ -85,7 +101,7 @@ body {
         .menubar {
             a {
                 text-decoration: none;
-                color:rgb(46, 44, 44);
+                color: $mb-menu-a-color;
                 display:flex;
                 align-items: center;
                 flex-direction: row;
@@ -93,11 +109,69 @@ body {
             svg {
                 width:2.3em !important;
                 height: 2.3em !important;
-                fill: rgba(17,20,61,.4705882353);
+                fill: $mb-menu-svg-color;
             }
             .active {
                 svg {
                     fill: rgba(218,49,174,1) !important
+                }
+            }
+        }
+    }
+}
+.dark {
+    nav {
+        background-color: #22233a !important;
+        color: #fff !important;
+        .navbar-brand {
+            $navbar-brand-color: #fff;
+            color: $navbar-brand-color !important;
+        }
+        .hamburger-area {
+            $menu-hamburger-area: #fff;
+            border-right-color: $menu-hamburger-area !important;
+            .btn-hamburger {
+                z-index: 10;
+                svg {
+                    fill: #fff !important;
+                }
+            }
+        }
+    }
+
+    .menu-content {
+        $menu-bg-color: #22233a;
+        background: $menu-bg-color;
+        .menubar {
+            svg {
+                $menu-svg-fill: rgb(255, 255, 255);
+                fill: $menu-svg-fill;
+            }
+            .dark-mode-activate {
+                svg {
+                    fill: #ff683a;
+                }
+            }
+        }
+    }
+    .mobile-menu {
+        .menu-close-area {
+            .btn-close {
+                $mb-close-bg: #fff;
+                color: $mb-close-bg;
+            }
+        }
+        .mobile-menu-area {
+            $mb-menu-bg: rgba(27,28,48);
+            background: $mb-menu-bg;
+            .menubar {
+                a {
+                    $mb-menu-a-color: #fff;
+                    color: $mb-menu-a-color;
+                }
+                svg {
+                    $mb-menu-svg-color: #fff;
+                    fill: $mb-menu-svg-color;
                 }
             }
         }

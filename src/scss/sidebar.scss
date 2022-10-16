@@ -1,3 +1,5 @@
+$portfolio-bg-color: rgba(17,20,61);
+$item-border-color: rgba(229,229,229);
 .sidebar {
     padding: 1rem;
     height: 88vh;
@@ -6,8 +8,7 @@
     width: 100%;
     .sidebar-portfolio {
         margin: auto;
-        --tw-bg-opacity: 1;
-        background-color: rgba(17,20,61,var(--tw-bg-opacity));
+        background-color: $portfolio-bg-color;
         color: #fff;
         border-radius: 1em;
         padding: 1rem;
@@ -18,8 +19,7 @@
         }
     }
     .staking-item {
-        --tw-border-opacity: 1;
-        border: 1px solid rgba(229,229,229,var(--tw-border-opacity));
+        border: 1px solid $item-border-color;
         margin: auto;
         padding: 0.8rem;
         padding-left: 1.3rem;
@@ -31,6 +31,34 @@
         overflow-y: scroll !important;
         overflow-x: hidden !important;
     }
+    .sidebar {
+        height: 100%;
+        overflow: unset !important;
+    }
+    .main-content {
+        overflow: unset !important;
+    }
+}
+.dark {
+    .sidebar {
+        --tw-bg-opacity: 1;
+        background-color: rgba(27,28,48,var(--tw-bg-opacity));
+        color: #fff;
+        .sidebar-portfolio {
+            $portfolio-bg-color: linear-gradient(90deg,#323249, #22233a);
+            background-image: $portfolio-bg-color;
+        }
+        .staking-item {
+            $portfolio-bg-color: linear-gradient(90deg,#323249, #22233a);
+            background-image: $portfolio-bg-color;
+            $item-border-color: #323249;
+            border-color: #323249;
+        }
+        .btn {
+            color: #fff;
+        }
+
+    }
 }
 .sidebar::-webkit-scrollbar {
     width: 5px;
@@ -38,8 +66,15 @@
   }
 
 /* Track */
+$scroll-track-color: #e5e5e5;
 .sidebar::-webkit-scrollbar-track {
-    background: transparent; 
+    background: $scroll-track-color!important;
+}
+.dark {
+    .sidebar::-webkit-scrollbar-track {
+        $scroll-track-color: #171717;
+        background: $scroll-track-color!important;
+    } 
 }
 
 /* Handle */
