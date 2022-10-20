@@ -1,0 +1,33 @@
+@use 'stake';
+.nft-content {
+    .lockup-stak {
+    }
+    .search-reward {
+        .search-nft {
+            border: 1px solid #000;
+            label {
+                opacity: .65;
+            }
+            input {
+                border: 0;
+                width: 5rem;
+                font-size: 20px;
+            }
+            input:focus-visible {
+                outline: unset;
+            }
+            button {
+                border: none;
+                background: none;
+                opacity: .6;
+                padding: 8px 12px;
+                border-left: 1px solid rgb(175, 175, 175);
+            }
+        }
+        .claim-all-btn {
+            border: 0;
+            background-color: stake.$light-gray-color;
+            color: #484242;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.leaderboards-lank {
+    padding: 1rem 2rem;
+    .trader-item {
+        div {
+            flex: 1;
+        }
+    }
+    h2 {
+        width: 50px;
+    }
+}
+.leaderboards-lank:first-child {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.leaderboards-lank:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.leaderboards-lank:nth-child(1) {
+    background-image: linear-gradient(316deg,hsla(0,0%,100%,.03) 34.66%,#faea06 210.29%);
+}
+.leaderboards-lank:nth-child(2) {
+    background-image: linear-gradient(316deg,hsla(0,0%,100%,.03) 34.66%,#c3b7b7 210.29%);
+}
+.leaderboards-lank:nth-child(3) {
+    background-image: linear-gradient(316deg,hsla(0,0%,100%,.03) 34.66%,#a76c47 210.29%);
+}

@@ -1,7 +1,9 @@
+@use 'customButton';
+@use 'stake';
 $portfolio-bg-color: rgba(17,20,61);
 $item-border-color: rgba(229,229,229);
 .sidebar {
-    padding: 1rem;
+    padding: 1rem 2rem;
     height: 88vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -24,6 +26,188 @@ $item-border-color: rgba(229,229,229);
         padding: 0.8rem;
         padding-left: 1.3rem;
         overflow-wrap: anywhere;
+    }
+    .open-position {
+        background-color: rgb(3 6 16);
+        color: #fff;
+        height: 195px;
+        padding: 1.5rem;
+        cursor: pointer;
+        img:nth-child(2) {
+            right: 15px;
+            bottom: 15px;
+        }
+        button {
+            background-color: customButton.$btn-bg-color;
+            color: white;
+            border-radius: 3rem;
+            position: relative;
+            top: -16px;
+            width: 100%;
+            padding: 5px 0px;
+            opacity: 0; 
+            transition: all .6s;
+        }
+        transition: all .4s;
+    }
+    .open-position:hover {
+        border: 2px solid customButton.$btn-bg-color;
+        padding-top: 3px;
+        img:nth-child(2) {
+            display: none;
+        }
+        button {
+            margin-top: 10px;
+            opacity: 1;
+        }
+    }
+    .type-area {
+        button {
+            background-color: stake.$light-gray-color;
+            color: stake.$dark-blue-color;
+            border-radius: 1.3rem;
+            border: none;
+            flex: 1;
+            svg {
+                width: 2.3rem;
+                height: 2.3rem;
+            }
+            svg:nth-child(1) {
+                fill: #58bd7d;
+                stroke: #58bd7d;
+            }
+        }
+        button:nth-child(2) {
+            svg {
+                fill: #ee2315;
+                stroke: #ee2315;
+            }
+        }
+        button.active {
+            background-color: stake.$dark-blue-color;
+            color: #fff;
+        }
+    }
+    .collateral-token, .leverage-preview {
+        border: 1px solid $item-border-color;
+        input {
+            max-width: 225px;
+            min-width: 5px;
+            border: none;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        label {
+            opacity: .65;;
+        }
+    }
+    .leverage-controll {
+        border: 1px solid $item-border-color;
+        .ctrl-item {
+            button {
+                border: none;
+                background: none;
+                font-size: 14px;
+                padding: 0px 8px;
+                border-radius: 8px;
+                height: fit-content;
+            }
+            button.active {
+                background-color: stake.$dark-blue-color;
+                color: #fff;
+            }
+        }
+        input[type=range] {
+            -webkit-appearance: none;
+            margin-right: 15px;
+            width: 100%;
+            height: 7px;
+            background: rgb(175 168 168 / 60%);
+            border-radius: 5px;
+            background-image: linear-gradient(#10b981, #10b981);
+            background-repeat: no-repeat;
+        }
+        /* Input Thumb */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 17px;
+            width: 17px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: grab;
+            box-shadow: 0 0 2px 0 #555;
+            transition: background .3s ease-in-out;
+        }
+    }
+    .index-price {
+        border: 1px solid $item-border-color;
+        .price-preview {
+            border: 1px solid stake.$token-amount-border-color;
+            button {
+                background-color: #fff;
+                border: 0;
+                bottom: 1px;
+                top: 1px;
+                width: 3rem;
+                opacity: .65;
+                z-index: 1;
+            }
+            button::before {
+                background-color: rgb(177, 174, 174);
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                transition: background-color .15s;
+                height: 1px;
+                width: 18px;
+            }
+            button:nth-child(3)::after {
+                background-color: rgb(177, 174, 174);
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                transition: background-color .15s;
+                width: 1px;
+                height: 18px;
+            }
+            p {
+                border: 0;
+                border-left: 1px solid stake.$token-amount-border-color;
+                border-right: 1px solid stake.$token-amount-border-color;
+                background-color: #f8f8f8;
+            }
+        }
+        .btn-group {
+            background-color: #1b1c30;
+            button {
+                background-color: #1b1c30;
+                color: #0c0c1a;
+                border: none;
+            }
+            button.active {
+                background-color: stake.$dark-blue-color;
+                color: #fff;
+                border-radius: 5px;
+            }
+        }
+        .price-detail {
+            font-size: 15px;
+        }
+    }
+    .max-collateral-btn {
+        background-color: stake.$light-gray-color;
+        border: none;
+        color: rgb(88, 85, 85);
+        padding: 0.8rem 0px;
+    }
+    .long-info {
+        div {
+            border: 1px solid $item-border-color;
+            font-size: 15px;
+        }
     }
 }
 @media screen and (max-width: 768px) {

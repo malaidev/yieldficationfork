@@ -7,6 +7,8 @@ $mb-close-bg: rgb(85, 82, 82);
 $mb-menu-bg: #fff;
 $mb-menu-a-color: rgb(46, 44, 44);
 $mb-menu-svg-color: rgba(17,20,61,.4705882353);
+$warn-bg-color: rgba(255,228,230);
+$warn-color: rgba(225, 29, 71, 0.952);
 body {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -17,14 +19,23 @@ body {
 }
 .light {
     background-color: #fff;
-    color: #333;
+    color: #000;
 }
 .app-container {
     flex: 17;
     .main-content {
-        height: 88vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        height: 90vh;
+        overflow: scroll;
+        
+        .net-warn {
+            background-color: $warn-bg-color;
+            color: $warn-color;
+            border-radius: 1.2rem;
+            svg {
+                width: 5rem;
+                height: 3rem;
+            }
+        }
     }
     .navbar {
         --tw-ring-offset-shadow: 0 0 transparent;
@@ -84,6 +95,7 @@ body {
 }
 .mobile-menu {
     height: 100vh;
+    z-index: 300;
     .menu-close-area {
         z-index: 50;
         .btn-close {
@@ -139,6 +151,14 @@ body {
         }
     }
 
+    .net-warn {
+        $warn-bg-color: rgba(254,205,211);
+        background-color: $warn-bg-color;
+        color: rgba(136,19,55);
+        svg {
+            fill:  rgba(190, 46, 77, 0.952);               
+        }
+    }
     .menu-content {
         $menu-bg-color: #22233a;
         background: $menu-bg-color;

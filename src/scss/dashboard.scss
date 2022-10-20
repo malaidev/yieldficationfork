@@ -1,16 +1,5 @@
-$warn-bg-color: rgba(255,228,230);
-$warn-color: rgba(225, 29, 71, 0.952);
 $price-bg-color: rgba(17,20,61);
 .dashboard-content {
-    .net-warn {
-        background-color: $warn-bg-color;
-        color: $warn-color;
-        border-radius: 1.2rem;
-        svg {
-            width: 3rem;
-            height: 3rem;
-        }
-    }
     .price-effect {
         background-image: url("../assets/effect.svg");
         background-repeat: no-repeat;
@@ -21,49 +10,19 @@ $price-bg-color: rgba(17,20,61);
         padding: 3rem 5rem;
         height: 100%;
         padding-bottom: 9em;
-        .bg-gradient-txt {
-            color: transparent;
-            --tw-gradient-to: #7f3deb;
-            --tw-gradient-from: #f42d9b;
-            --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(244,45,155,0));
-            background-image: linear-gradient(90deg,var(--tw-gradient-stops));
-        }
-        .bg-clip-text {
-            -webkit-background-clip: text;
-        }
     }
     .total-tokens {
         div {
             overflow-wrap: anywhere;
             overflow: hidden;
             padding: 18px 30px;
-            .bg-img-opacity {
-                position: absolute;
-                bottom: -0.75rem;
-                right: -0.75rem;
-                opacity: .1;
-            }
         }
-    }
-    .bg-gradient-to-r {
-        --tw-gradient-to: #fff0ff;
-        --tw-gradient-from: #fff0ff;
-        --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(255,240,255,0));
-        background-image: linear-gradient(90deg,var(--tw-gradient-stops));
     }
 }
 .dark {
     .dashboard-content {
         background-color: #22233a !important;
         color: #fff !important;
-        .net-warn {
-            $warn-bg-color: rgba(254,205,211);
-            background-color: $warn-bg-color;
-            color: rgba(136,19,55);
-            svg {
-                fill:  rgba(190, 46, 77, 0.952);               
-            }
-        }
         .price-effect {
             $price-bg-color: rgba(27,28,48);
             background-color: $price-bg-color;

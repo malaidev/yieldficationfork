@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import cls from 'classnames';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Header from './Header';
 import MenuBar from './MenuBar';
 import SideBar from './SideBar';
+import { useNavigate } from 'react-router-dom';
 import '../scss/layout.scss';
 
-const Home = (props) => {
+const Home = ({props}) => {
     const [theme, setTheme] = useState('light');
+    let navigate = useNavigate();
+    let location = useLocation();
 
     useEffect(() => {
-        console.log("--------- home --------")
+        getDashboard();
     }, [])
-
+    const getDashboard = () => {
+        if (location.pathname == '/') {
+            navigate('/dashboard');
+        }
+    }
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark')
@@ -25,7 +32,7 @@ const Home = (props) => {
    return (
     <>
         <div className={cls('main', 'd-flex', 'w-100', 'dark-mode', theme)}>
-            <MenuBar toggleTheme={toggleTheme} modeState={theme} />
+            <MenuBar toggleTheme={toggleTheme} modeState={theme}/>
             <div className="app-container">
                 <Header />
                 <Row>

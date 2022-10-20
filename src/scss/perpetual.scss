@@ -1,0 +1,89 @@
+@use 'stake';
+.perpetual-content {
+    .crypto-trading {
+        border: 1px solid stake.$light-gray-color;
+        .crypto-price {
+            border-bottom: 1px solid stake.$light-gray-color;
+            button {
+                border: 0;
+                border-radius: 2rem;
+                background-color: stake.$light-gray-color;
+                color: stake.$dark-blue-color;
+                font-weight: bold;
+                padding: 7px 22px;
+                height: fit-content;
+            }
+            button.active {
+                background-color: stake.$dark-blue-color;
+                color: #fff;
+            }
+        }
+        .crypto-assets {
+            div:nth-child(2) {
+                color: rgba(245,158,11);
+                svg {
+                    width:1.5rem;
+                    height:1.5rem;
+                }
+            }
+            button {
+                border: 2px solid #000;
+                font-size: 14px;
+            }
+        }
+        #tradingview-chart {
+            height: 610px;
+            margin: -1px;
+            iframe {
+                width: 100%;
+                height: 100%;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    }
+    .positions {
+        button {
+            border: 1px solid rgb(248, 246, 246);
+            background: none;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 8px 2.5rem;
+            font-size: 18px;
+        }
+        button.active {
+            background-color: rgb(35, 101, 245);
+            color: #fff;
+        }
+        button:hover {
+            background-color: rgb(215 232 254);
+        }
+    }
+    .search-reward {
+        .search-nft {
+            border: 1px solid rgb(34, 33, 33);
+            font-size: 14px;
+            label {
+                opacity: .65;
+            }
+            input {
+                border: 0;
+                width: 5rem;
+                font-size: 14px;
+            }
+            input:focus-visible {
+                outline: unset;
+            }
+            button {
+                border: none;
+                background: none;
+                opacity: .6;
+                padding: 8px 12px;
+                border-left: 1px solid rgb(175, 175, 175);
+            }
+        }
+    }
+    .no-position {
+        border: 1px solid rgb(226, 227, 228);
+    }
+}
