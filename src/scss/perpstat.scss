@@ -1,0 +1,7 @@
+@use 'sidebar';
+.stats-content {
+    width: 120%;
+    .traders {
+        border: 1px solid sidebar.$item-border-color;
+    }
+}

@@ -1,0 +1,140 @@
+$light-gray-color: rgb(213 214 225);
+$dark-blue-color: rgb(17, 20, 61);
+$token-amount-border-color: rgb(199, 193, 193);
+.stake-content {
+    .stake-area {
+        border: 1px solid #80808038;
+        .token-staking {
+            div {
+                flex: 1;
+                background-color: $light-gray-color;
+                cursor: pointer;
+                color: $dark-blue-color;
+                p {
+                    letter-spacing: 0.7px;
+                }
+            }
+            div.active {
+                background-color: $dark-blue-color;
+                color: #fff;
+            }
+        }
+        .token-detail {
+            background-color: rgba(255,252,225);
+            color: rgba(245,158,11);
+        }
+        .lock-period {
+            div {
+                background-color: $light-gray-color;
+                cursor: pointer;
+                color: $dark-blue-color;
+                p {
+                    margin: 0 !important;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+            div.active {
+                background-color: $dark-blue-color;
+                color: #fff;
+            }
+        }
+        .staking-amount {
+            .token-amount-preview {
+                div {
+                    border: 1px solid $token-amount-border-color;
+                    button {
+                        background-color: #fff;
+                        border: 0;
+                        bottom: 1px;
+                        top: 1px;
+                        width: 3rem;
+                        opacity: .65;
+                        z-index: 1;
+                    }
+                    button::before {
+                        background-color: rgb(177, 174, 174);
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        transition: background-color .15s;
+                        height: 1px;
+                        width: 18px;
+                    }
+                    button:nth-child(3)::after {
+                        background-color: rgb(177, 174, 174);
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        transition: background-color .15s;
+                        width: 1px;
+                        height: 18px;
+                    }
+                    input[type=number] {
+                        border: 0;
+                        border-left: 1px solid $token-amount-border-color;
+                        border-right: 1px solid $token-amount-border-color;
+                        background-color: #f8f8f8;
+                    }
+                    input[type=number]:focus-visible {
+                        outline: unset;
+                    }
+                }
+                button {
+                    right: 3.5rem;
+                    background: none;
+                    height: 100%;
+                    font-weight: 900;
+                    font-size: 18px;
+                }
+            }
+            .token-amount-control {
+                border: 1px solid $token-amount-border-color;
+                border-top: none;
+                input[type=range] {
+                    -webkit-appearance: none;
+                    margin-right: 15px;
+                    width: 100%;
+                    height: 7px;
+                    background: rgb(175 168 168 / 60%);
+                    border-radius: 5px;
+                    background-image: linear-gradient(#10b981, #10b981);
+                    background-repeat: no-repeat;
+                }
+                /* Input Thumb */
+                input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 17px;
+                    width: 17px;
+                    border-radius: 50%;
+                    background: #fff;
+                    cursor: grab;
+                    box-shadow: 0 0 2px 0 #555;
+                    transition: background .3s ease-in-out;
+                }
+            }
+            .token-buy {
+                border: 1px solid $token-amount-border-color;
+                border-top: none;
+                button {
+                    background: none;
+                    height: 100%;
+                    font-weight: 900;
+                    font-size: 18px;
+                }
+            }
+            .stake-btn {
+                background: $light-gray-color;
+                letter-spacing: .3px;
+                color:rgb(64 63 63);
+                font-size: 20px;
+            }
+        }
+    }
+    .free-token {
+        background-color: $dark-blue-color;
+        color: #fff;
+    }
+}

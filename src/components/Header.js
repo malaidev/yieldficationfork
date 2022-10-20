@@ -14,6 +14,7 @@ import { MenuContext } from '../context/MenuConnectContext';
 function Header() {
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
   const { show, setShow } = useContext(MenuContext);
+  const { title, setTitle } = useContext(MenuContext);
 
   useEffect(() => {
       function handleWindowResize() {
@@ -23,9 +24,10 @@ function Header() {
       window.addEventListener('resize', handleWindowResize);
 
       return () => {
-      window.removeEventListener('resize', handleWindowResize);
+        window.removeEventListener('resize', handleWindowResize);
       };
-  }, []);
+  }, [])
+
   const handleHamburger = () => {
     setShow(!show);
   }
@@ -35,7 +37,7 @@ function Header() {
         {
           windowSize.width <= 1024 && <div className="hamburger-area"><Button onClick={handleHamburger} className="btn-hamburger position-relative"><HiMenuAlt2 /></Button></div>
         }
-        <Navbar.Brand className="ft-bold ml-4" href="#home">Dashboard</Navbar.Brand>
+        <Navbar.Brand className="ft-bold ml-4" href="#home">{title}</Navbar.Brand>
         <div className="d-flex gap-2" id="basic-navbar-nav">
             <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#home"><img src={logo} width="15"/>$0.0710</Nav.Link>
             <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#link"> <IoDiamondOutline />$1,288.79</Nav.Link>

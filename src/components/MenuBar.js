@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaRegGrinStars, FaGripLines, FaTimes } from "react-icons/fa";
 import { BsCardImage, BsBriefcaseFill, BsStars, BsBarChartLineFill } from "react-icons/bs";
 import { RiDatabase2Fill, RiDashboardFill } from 'react-icons/ri';
@@ -12,8 +12,10 @@ import cls from 'classnames';
 
 const MenuBar = (props) => {
     const [windowSize, setWindowSize] = useState(getWindowDimensions());
-    // const menuButtonState = useContext(MenuContext);
     const { show, setShow } = useContext(MenuContext);
+    const [ path, setPath ] = useState('');
+    let location = useLocation();
+
     useEffect(() => {
         function handleWindowResize() {
             setWindowSize(getWindowDimensions());
@@ -25,9 +27,10 @@ const MenuBar = (props) => {
         window.removeEventListener('resize', handleWindowResize);
         };
     }, []);
+
     useEffect(() => {
-        
-    })
+        setPath(location.pathname);
+    }, [location]);
     const handleHamburger = () => {
         setShow(!show);
       }
@@ -42,22 +45,22 @@ const MenuBar = (props) => {
                             </Link>
                         </Col>
                         <Col className="menubar d-flex flex-column mt-5 mb-3 gap-5">
-                            <Link className="active" to="/">
+                            <Link className={cls(path=='/dashboard' && 'active')} to="/dashboard">
                                 <RiDashboardFill/>
                             </Link>
-                            <Link to="/">
+                            <Link className={cls(path=='/stake' && 'active')} to="/stake">
                                 <RiDatabase2Fill/>
                             </Link>
-                            <Link to="/">
+                            <Link className={cls(path=='/nft' && 'active')} to="/nft">
                                 <BsCardImage/>
                             </Link>
-                            <Link to="/">
+                            <Link className={cls(path=='/vesting' && 'active')} to="/vesting">
                                 <BsBriefcaseFill/>
                             </Link>
-                            <Link to="/">
+                            <Link className={cls(path=='/perpetual' && 'active')} to="/perpetual">
                                 <BsBarChartLineFill/>
                             </Link>
-                            <Link to="/">
+                            <Link className={cls(path=='/leaderboard' && 'active')} to="/leaderboard">
                                 <BsStars/>
                             </Link>
                             <Link onClick={props.toggleTheme} className={cls(props.modeState=='dark' &&'dark-mode-activate')}>
@@ -69,7 +72,7 @@ const MenuBar = (props) => {
                 <>
                     {
                         show ? 
-                        <div className="d-flex mobile-menu position-absolute">
+                        <div className="d-flex mobile-menu position-fixed">
                             <Col className="mobile-menu-area">
                                 <div className="menu-close-area d-flex justify-content-end">
                                     <Button onClick={handleHamburger} className="btn-close position-relative" style={{zIndex: 10}}><FaTimes /></Button>
@@ -80,22 +83,22 @@ const MenuBar = (props) => {
                                     </Link>
                                 </Col>
                                 <Col className="menubar d-flex flex-column ps-3 pe-5 me-5 align-items-start mt-5 mb-3 gap-4">
-                                    <Link className="active" to="/">
+                                    <Link className="active" to="/dashboard">
                                         <RiDashboardFill/>&nbsp;&nbsp; Dashboard
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/stake">
                                         <RiDatabase2Fill/>&nbsp;&nbsp; Stake!
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/nft">
                                         <BsCardImage/>&nbsp;&nbsp; NFTs
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/vesting">
                                         <BsBriefcaseFill/>&nbsp;&nbsp; Rewards
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/perpetual">
                                         <BsBarChartLineFill/>&nbsp;&nbsp; Futures Trading
                                     </Link>
-                                    <Link to="/">
+                                    <Link to="/leaderboard">
                                         <BsStars/>&nbsp;&nbsp; Leaderboard
                                     </Link>
                                     <Link onClick={props.toggleTheme} className={cls(props.modeState=='dark' &&'dark-mode-activate')}>
