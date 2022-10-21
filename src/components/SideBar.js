@@ -42,9 +42,9 @@ const Sidebar = () => {
                         <BsFillQuestionCircleFill />
                     </span>
                     <h2 className="fw-bold mb-0">$0.00</h2>
-                    <small>0 YDF</small>
+                    <small>0 HAVEN</small>
                 </div>
-                <CustomButton className="mt-4 py-2 w-100">Buy YDF on Uniswap</CustomButton>
+                <CustomButton className="mt-4 py-2 w-100">Buy HAVEN on Uniswap</CustomButton>
             </div>
             {
                 !sidebarTab ? 
@@ -100,7 +100,7 @@ const Sidebar = () => {
                             <div className='d-flex fs-5 gap-2'>
                                 <label>PAY</label>
                                 <input type="text" className="bg-transparent text-start fw-bold" placeholder="0" />
-                                <b>YDF</b>
+                                <b>HAVEN</b>
                             </div>
                             <div className='d-flex justify-content-start'>
                                 <b className="me-1"> Bal: NaN ($NaN) </b>
@@ -112,7 +112,7 @@ const Sidebar = () => {
                             <div className='d-flex fs-5 gap-2'>
                                 <label>LONG</label>
                                 <input type="text" className="bg-transparent text-start fw-bold" placeholder="0" />
-                                <b>YDF</b>
+                                <b>HAVEN</b>
                             </div>
                             <div className='d-flex justify-content-start'>
                                 <b className="me-1"> Leverage: 5x </b>
@@ -158,8 +158,8 @@ const Sidebar = () => {
                                     <div className="price-detail d-flex flex-column align-items-start gap-3">
                                         <span className="text-start text-serif text-gray-300">Current index price: $19,257.25</span>
                                         <span className="text-start text-serif text-gray-300">-50.00% index price movement downwards from open</span>
-                                        <span className="text-start text-serif text-gray-300">Collateral: 0 YDF</span>
-                                        <span className="text-start text-serif text-gray-300">Value at close: 0.00 YDF (+0.00)</span>
+                                        <span className="text-start text-serif text-gray-300">Collateral: 0 HAVEN</span>
+                                        <span className="text-start text-serif text-gray-300">Value at close: 0.00 HAVEN (+0.00)</span>
                                     </div>
                             </>
                         }

@@ -40,6 +40,7 @@ $item-border-color: rgba(229,229,229);
         button {
             background-color: customButton.$btn-bg-color;
             color: white;
+            border: none;
             border-radius: 3rem;
             position: relative;
             top: -16px;
