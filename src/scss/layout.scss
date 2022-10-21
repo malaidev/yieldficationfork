@@ -1,20 +1,25 @@
+@use 'customButton';
+$dark-bg-color: #0b1217 ;
+$dark-div-bg: rgb(20 32 40);
+$dark-div-border: #2c4250;
 $navbar-brand-color:  rgb(0, 0, 0);
+$dark-nav-bg: #070d10;
 $menu-bg-color: #fff;
 $menu-svg-fill: rgba(17,20,61,.4705882353);
-$menu-active-svg-fill: rgba(218,49,174,1);
+$menu-active-svg-fill: customButton.$btn-bg-color;
 $menu-hamburger-area: #706464;
 $mb-close-bg: rgb(85, 82, 82);
 $mb-menu-bg: #fff;
 $mb-menu-a-color: rgb(46, 44, 44);
 $mb-menu-svg-color: rgba(17,20,61,.4705882353);
-$warn-bg-color: rgba(255,228,230);
-$warn-color: rgba(225, 29, 71, 0.952);
+$warn-bg-color: rgb(229 183 65 / 85%);
+$warn-color: #fff;
 body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
 .dark {
-    background-color: #22233a ;
+    background-color: $dark-bg-color !important;
     color: #fff ;
 }
 .light {
@@ -23,6 +28,7 @@ body {
 }
 .app-container {
     flex: 17;
+    font-family: Kanit, sans-serif !important;
     .main-content {
         height: 90vh;
         overflow: scroll;
@@ -34,6 +40,7 @@ body {
             svg {
                 width: 5rem;
                 height: 3rem;
+                fill: rgb(255 200 0 / 95%);
             }
         }
     }
@@ -57,8 +64,7 @@ body {
             }
             .nav-link {
                 padding: 0.5rem 16px;
-                --tw-border-opacity: 1;
-                border: 1px solid rgba(229,229,229,var(--tw-border-opacity));
+                border: 1px solid customButton.$btn-bg-color;
             }
             .btn-hamburger {
                 background: unset;
@@ -94,22 +100,29 @@ body {
     }
 }
 .mobile-menu {
-    height: 100vh;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    --menu-bg-opacity: .4;
+    background: rgb(58, 60, 61, var(--menu-bg-opacity));
     z-index: 300;
-    .menu-close-area {
-        z-index: 50;
-        .btn-close {
-            background:unset;
-            border: unset;
-            color: $mb-close-bg;
-        }
-    }
+    overflow-y: scroll;
+    overflow-x: hidden;
+
     .mobile-menu-area {
+        width: 300px;
+        height: 100%;
         background: $mb-menu-bg;
-        overflow-y: scroll;
-        overflow-x: hidden;
         z-index: 30;
         flex: 6 !important;
+        .menu-close-area {
+            z-index: 50;
+            .btn-close {
+                background:unset;
+                border: unset;
+                color: $mb-close-bg;
+            }
+        }
         .menubar {
             a {
                 text-decoration: none;
@@ -125,7 +138,7 @@ body {
             }
             .active {
                 svg {
-                    fill: rgba(218,49,174,1) !important
+                    fill: $menu-active-svg-fill !important;
                 }
             }
         }
@@ -133,7 +146,7 @@ body {
 }
 .dark {
     nav {
-        background-color: #22233a !important;
+        background-color: $dark-nav-bg !important;
         color: #fff !important;
         .navbar-brand {
             $navbar-brand-color: #fff;
@@ -160,8 +173,7 @@ body {
         }
     }
     .menu-content {
-        $menu-bg-color: #22233a;
-        background: $menu-bg-color;
+        background: $dark-nav-bg;
         .menubar {
             svg {
                 $menu-svg-fill: rgb(255, 255, 255);
@@ -175,15 +187,15 @@ body {
         }
     }
     .mobile-menu {
-        .menu-close-area {
-            .btn-close {
-                $mb-close-bg: #fff;
-                color: $mb-close-bg;
-            }
-        }
         .mobile-menu-area {
-            $mb-menu-bg: rgba(27,28,48);
+            $mb-menu-bg: $dark-nav-bg;
             background: $mb-menu-bg;
+            .menu-close-area {
+                .btn-close {
+                    $mb-close-bg: #fff;
+                    color: $mb-close-bg;
+                }
+            }
             .menubar {
                 a {
                     $mb-menu-a-color: #fff;
@@ -192,6 +204,11 @@ body {
                 svg {
                     $mb-menu-svg-color: #fff;
                     fill: $mb-menu-svg-color;
+                }
+                .dark-mode-activate {
+                    svg {
+                        fill: #ff683a;
+                    }
                 }
             }
         }
@@ -210,10 +227,10 @@ body {
 
 /* Handle */
 .main-content::-webkit-scrollbar-thumb {
-    background: #008ae8;
+    background: #888888;
 }
 
 /* Handle on hover */
 .main-content::-webkit-scrollbar-thumb:hover {
-    background: #008ae8; 
+    background: #888888; 
 }

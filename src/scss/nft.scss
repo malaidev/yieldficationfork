@@ -1,17 +1,23 @@
+@use 'layout';
 @use 'stake';
 .nft-content {
-    .lockup-stak {
-    }
+    background: layout.$dark-bg-color;
     .search-reward {
         .search-nft {
-            border: 1px solid #000;
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 14px;
             label {
                 opacity: .65;
             }
             input {
                 border: 0;
                 width: 5rem;
-                font-size: 20px;
+                font-size: 14px;
+                color: #fff;
+                background: layout.$dark-bg-color;
+            }
+            input:focus {
+                color: #fff;
             }
             input:focus-visible {
                 outline: unset;
@@ -21,13 +27,9 @@
                 background: none;
                 opacity: .6;
                 padding: 8px 12px;
-                border-left: 1px solid rgb(175, 175, 175);
+                border-left: 1px solid #000;
+                color: #fff;
             }
-        }
-        .claim-all-btn {
-            border: 0;
-            background-color: stake.$light-gray-color;
-            color: #484242;
         }
     }
 }

@@ -26,18 +26,18 @@ const Perpetual = () => {
                 <div className='crypto-price d-flex justify-content-between align-items-center gap-5 px-4 py-3'>
                     <div className="d-flex gap-2 flex-wrap">
                         <button className="active">BTC</button>
-                        <button>ETH</button>
-                        <button>LINK</button>
-                        <button>L1 Index</button>
-                        <button>Growth Tech Equities Index</button>
-                        <button>Swap Index</button>
+                        <button className="bg-gradient-txt bg-clip-text">ETH</button>
+                        <button className="bg-gradient-txt bg-clip-text">LINK</button>
+                        <button className="bg-gradient-txt bg-clip-text">L1 Index</button>
+                        <button className="bg-gradient-txt bg-clip-text">Growth Tech Equities Index</button>
+                        <button className="bg-gradient-txt bg-clip-text">Swap Index</button>
                     </div>
                     <div className="fs-3 text-serif fw-semibold">$19,542.43</div>
                 </div>
                 <div className="crypto-assets d-flex justify-content-between px-4 py-3">
                     <div className='d-flex align-items-center'>
                         <label>Assets:</label>
-                        <button className="d-flex align-items-center rounded-5 py-1 px-3 ms-3"><img src={btc} width="20"/>BTC / USD - $19,542.43</button>
+                        <button className="d-flex align-items-center rounded-5 py-1 px-3 ms-3 bg-gradient-txt bg-clip-text"><img src={btc} width="20"/>BTC / USD - $19,542.43</button>
                     </div>
                     <div className='d-flex align-items-center gap-2'>
                         <AiFillWarning />
@@ -49,7 +49,7 @@ const Perpetual = () => {
                 </div>
             </div>
             <div className='mt-5 mb-3 d-flex flex-column gap-3'>
-                <div className="d-flex positions justify-content-between">
+                <div className="d-flex positions gap-2 flex-wrap">
                     <button className='active'>My Open Positions</button>
                     <button>My Closed Positions</button>
                     <button>All Closed Positions</button>

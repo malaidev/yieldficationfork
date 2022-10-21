@@ -6,7 +6,7 @@ import CustomButton from './Button';
 import { IoDiamondOutline } from "react-icons/io5";
 import { Col, Button } from 'react-bootstrap';
 import { getWindowDimensions } from '../utils/GlobalFuns';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo2.png';
 import { useContext, useEffect, useState } from 'react';
 import { MenuContext } from '../context/MenuConnectContext';
 
@@ -39,7 +39,7 @@ function Header() {
         }
         <Navbar.Brand className="ft-bold ml-4" href="#home">{title}</Navbar.Brand>
         <div className="d-flex gap-2" id="basic-navbar-nav">
-            <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#home"><img src={logo} width="15"/>$0.0710</Nav.Link>
+            <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#home"><img src={logo} width="25"/>$0.0710</Nav.Link>
             <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#link"> <IoDiamondOutline />$1,288.79</Nav.Link>
             <CustomButton className="">Connect Wallet</CustomButton>
         </div>

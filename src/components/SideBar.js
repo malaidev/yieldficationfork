@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import CustomButton from './Button';
 import { Button, ButtonGroup, Form } from 'react-bootstrap';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
+import { FaQuestionCircle } from 'react-icons/fa';
 import { TbArrowBigTop, TbArrowBigDown } from 'react-icons/tb';
 import '../scss/sidebar.scss';
 import empty from '../assets/empty.svg';
 import btc from '../assets/BTC.png';
-import change from '../assets/change.svg';
+import change from '../assets/return.png';
 import SwitchToggle from './SwitchToggle';
 
 const Sidebar = () => {
@@ -39,7 +40,7 @@ const Sidebar = () => {
                 <div className="d-flex flex-column text-start pt-1 gap-1">
                     <span className="d-flex justify-content-between">
                         My Portfolio
-                        <BsFillQuestionCircleFill />
+                        <b className="d-flex justify-content-center align-items-center"> ? </b>
                     </span>
                     <h2 className="fw-bold mb-0">$0.00</h2>
                     <small>0 HAVEN</small>
@@ -68,7 +69,7 @@ const Sidebar = () => {
                         <span className="text-gray-500">Total Aggregate Rewards</span>
                         <div className="fs-4 d-flex gap-4 align-items-center">
                             <b className="fw-bold">264.7710 ETH</b>
-                            <small>($335,022.89)</small>
+                            <small>($335,22.89)</small>
                         </div>
                     </div>
                     <h5 className="py-3 ps-2 d-flex align-items-center justify-content-between">
@@ -86,7 +87,7 @@ const Sidebar = () => {
                     <h5 className="py-3 ps-2 text-start">Open Position</h5>
                     <div className="d-flex flex-column align-items-center open-position rounded-4 position-relative">
                         <img src={btc} width="150" className="mx-auto"/>
-                        <img src={change} width="35" className="position-absolute"/>
+                        <img src={change} width="35" className="position-absolute green-filter"/>
                         <button> Change Position Asset/Index </button>
                     </div>
                     <h5 className="pt-5 pb-3 ps-2 text-start">Type</h5>
@@ -100,11 +101,11 @@ const Sidebar = () => {
                             <div className='d-flex fs-5 gap-2'>
                                 <label>PAY</label>
                                 <input type="text" className="bg-transparent text-start fw-bold" placeholder="0" />
-                                <b>HAVEN</b>
+                                <b className="bg-gradient-txt bg-clip-text">HAVEN</b>
                             </div>
                             <div className='d-flex justify-content-start'>
                                 <b className="me-1"> Bal: NaN ($NaN) </b>
-                                <button className="fw-bold text-pink border-0 bg-white"> MAX </button>
+                                <button className="fw-bold bg-gradient-txt bg-clip-text border-0"> MAX </button>
                             </div>
                             <CustomButton className="py-2">Change Collateral Token</CustomButton>
                         </div>
@@ -112,7 +113,7 @@ const Sidebar = () => {
                             <div className='d-flex fs-5 gap-2'>
                                 <label>LONG</label>
                                 <input type="text" className="bg-transparent text-start fw-bold" placeholder="0" />
-                                <b>HAVEN</b>
+                                <b className="bg-gradient-txt bg-clip-text">HAVEN</b>
                             </div>
                             <div className='d-flex justify-content-start'>
                                 <b className="me-1"> Leverage: 5x </b>
@@ -164,7 +165,7 @@ const Sidebar = () => {
                             </>
                         }
                     </div>
-                    <button className="max-collateral-btn rounded-5 w-100 fw-bold">Max Collateral Reached</button>
+                    <CustomButton className="w-100 max-collateral-btn">Max Collateral Reached</CustomButton>
                     <div className="long-info mb-5">
                         <h5 className="pt-5 pb-3 ps-2 text-start">Long Info</h5>
                         <div className="d-flex flex-column p-3 rounded-4">

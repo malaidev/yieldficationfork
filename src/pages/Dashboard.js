@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { BsFillExclamationDiamondFill } from 'react-icons/bs'
 import { getConstData } from '../utils/getConstData';
-import stake from '../assets/stake.svg';
-import vesting from '../assets/vesting.svg';
-import single from '../assets/single.svg';
-import pair from '../assets/pair.svg';
+import cloudEffect from '../assets/cloud-effect.png';
+import stake from '../assets/stake.png';
+import vesting from '../assets/lock.png';
+import single from '../assets/haven-token.png';
+import pair from '../assets/haven-token.png';
 import empty from '../assets/empty.svg';
 import CustomButton from '../components/Button';
 import { Col, Row } from 'react-bootstrap';
@@ -34,7 +35,7 @@ const Dashboard = (props) => {
                     <div className="my-3">
                         <Row className="d-flex flex-row align-items-stretch h-100">
                             <Col lg={5} md={12} sm={12} className="mb-3">
-                               <div className="price-effect rounded-5 d-flex flex-column align-items-center">
+                               <div className="price-effect position-relative rounded-5 d-flex flex-column align-items-center">
                                 <div className="fw-bold">
                                         <h1>$0.0754</h1>
                                         <p>HAVEN Price</p>
@@ -42,6 +43,7 @@ const Dashboard = (props) => {
                                     <div className="">
                                         <h2 className='bg-gradient-txt bg-clip-text'>456,328,209</h2>
                                         <p className="fw-bold">Total Supply</p>
+                                        <img src={cloudEffect} alt="cloud effect" />
                                     </div>
                                </div>
                             </Col>
@@ -53,7 +55,7 @@ const Dashboard = (props) => {
                                         </h4>
                                         <h4 className="fw-bold">(HAVEN)</h4>  
                                         <h6 className='fs-5'>Total HAVEN Staked</h6>
-                                        <img className="bg-img-opacity" src={stake} />
+                                        <img className="bg-img-opacity green-filter" width="130" src={stake} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
@@ -61,7 +63,7 @@ const Dashboard = (props) => {
                                         </h4>
                                         <h4 className="fw-bold">(HAVEN)</h4>  
                                         <h6>Total Yield Vesting</h6>
-                                        <img className="bg-img-opacity" src={vesting} />
+                                        <img className="bg-img-opacity green-filter" width="130" src={vesting} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
@@ -69,7 +71,7 @@ const Dashboard = (props) => {
                                         </h4>
                                         <h4 className="fw-bold">(sHAVEN)</h4>  
                                         <h6>Total Single Sided NFTs</h6>
-                                        <img className="bg-img-opacity" src={single} />
+                                        <img className="bg-img-opacity" width="130" src={single} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
@@ -77,7 +79,7 @@ const Dashboard = (props) => {
                                         </h4>
                                         <h4 className="fw-bold">(slHAVEN)</h4>  
                                         <h6>Total LP NFTs</h6>
-                                        <img className="bg-img-opacity" src={pair} />
+                                        <img className="bg-img-opacity" width="130" src={single} />
                                     </Col>
                                 </Row>
                             </Col>
