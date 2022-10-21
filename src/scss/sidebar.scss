@@ -1,7 +1,9 @@
+@use 'layout';
 @use 'customButton';
 @use 'stake';
 $portfolio-bg-color: rgba(17,20,61);
-$item-border-color: rgba(229,229,229);
+// $item-border-color: rgba(229,229,229);
+$item-border-color: layout.$dark-div-border;
 .sidebar {
     padding: 1rem 2rem;
     height: 88vh;
@@ -14,10 +16,12 @@ $item-border-color: rgba(229,229,229);
         color: #fff;
         border-radius: 1em;
         padding: 1rem;
-        svg {
-            --tw-bg-opacity: 1;
-            stroke: #fff !important;
-            fill: rgba(218,49,174,var(--tw-bg-opacity));
+        b {
+            border-radius: 50%;
+            background-color: customButton.$btn-bg-color;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 20px;
         }
     }
     .staking-item {
@@ -64,8 +68,8 @@ $item-border-color: rgba(229,229,229);
     }
     .type-area {
         button {
-            background-color: stake.$light-gray-color;
-            color: stake.$dark-blue-color;
+            background-color: layout.$dark-div-bg;
+            color: #fff;
             border-radius: 1.3rem;
             border: none;
             flex: 1;
@@ -84,9 +88,13 @@ $item-border-color: rgba(229,229,229);
                 stroke: #ee2315;
             }
         }
+        button:hover {
+            position: relative;
+            top: -4px;
+        }
         button.active {
-            background-color: stake.$dark-blue-color;
-            color: #fff;
+            background-color: layout.$dark-div-bg;
+            color: customButton.$btn-bg-color;
         }
     }
     .collateral-token, .leverage-preview {
@@ -95,6 +103,7 @@ $item-border-color: rgba(229,229,229);
             max-width: 225px;
             min-width: 5px;
             border: none;
+            color: #fff;
         }
         input:focus-visible {
             outline: none;
@@ -115,7 +124,7 @@ $item-border-color: rgba(229,229,229);
                 height: fit-content;
             }
             button.active {
-                background-color: stake.$dark-blue-color;
+                background-color: layout.$dark-div-bg;
                 color: #fff;
             }
         }
@@ -144,9 +153,9 @@ $item-border-color: rgba(229,229,229);
     .index-price {
         border: 1px solid $item-border-color;
         .price-preview {
-            border: 1px solid stake.$token-amount-border-color;
+            border: 1px solid layout.$dark-div-border;
             button {
-                background-color: #fff;
+                background-color: layout.$dark-bg-color;
                 border: 0;
                 bottom: 1px;
                 top: 1px;
@@ -155,7 +164,7 @@ $item-border-color: rgba(229,229,229);
                 z-index: 1;
             }
             button::before {
-                background-color: rgb(177, 174, 174);
+                background-color: stake.$light-gray-color;
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -165,7 +174,7 @@ $item-border-color: rgba(229,229,229);
                 width: 18px;
             }
             button:nth-child(3)::after {
-                background-color: rgb(177, 174, 174);
+                background-color: stake.$light-gray-color;
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -176,20 +185,20 @@ $item-border-color: rgba(229,229,229);
             }
             p {
                 border: 0;
-                border-left: 1px solid stake.$token-amount-border-color;
-                border-right: 1px solid stake.$token-amount-border-color;
-                background-color: #f8f8f8;
+                border-left: 1px solid layout.$dark-div-border;
+                border-right: 1px solid layout.$dark-div-border;
+                color: stake.$light-gray-color;
             }
         }
         .btn-group {
-            background-color: #1b1c30;
+            background-color: layout.$dark-nav-bg;
             button {
-                background-color: #1b1c30;
-                color: #0c0c1a;
+                background-color: layout.$dark-nav-bg;
+                color: #000;
                 border: none;
             }
             button.active {
-                background-color: stake.$dark-blue-color;
+                background-color: layout.$dark-div-bg;
                 color: #fff;
                 border-radius: 5px;
             }
@@ -199,9 +208,7 @@ $item-border-color: rgba(229,229,229);
         }
     }
     .max-collateral-btn {
-        background-color: stake.$light-gray-color;
         border: none;
-        color: rgb(88, 85, 85);
         padding: 0.8rem 0px;
     }
     .long-info {
@@ -226,18 +233,14 @@ $item-border-color: rgba(229,229,229);
 }
 .dark {
     .sidebar {
-        --tw-bg-opacity: 1;
-        background-color: rgba(27,28,48,var(--tw-bg-opacity));
+        background-color: layout.$dark-bg-color;
         color: #fff;
         .sidebar-portfolio {
-            $portfolio-bg-color: linear-gradient(90deg,#323249, #22233a);
-            background-image: $portfolio-bg-color;
+            background-color: layout.$dark-div-bg;
         }
         .staking-item {
-            $portfolio-bg-color: linear-gradient(90deg,#323249, #22233a);
-            background-image: $portfolio-bg-color;
-            $item-border-color: #323249;
-            border-color: #323249;
+            background-color: layout.$dark-div-bg;
+            border-color: layout.$dark-div-border;
         }
         .btn {
             color: #fff;
@@ -257,17 +260,17 @@ $scroll-track-color: #e5e5e5;
 }
 .dark {
     .sidebar::-webkit-scrollbar-track {
-        $scroll-track-color: #171717;
+        $scroll-track-color: #fff;
         background: $scroll-track-color!important;
     } 
 }
 
 /* Handle */
 .sidebar::-webkit-scrollbar-thumb {
-    background: #008ae8;
+    background: #888888;
 }
 
 /* Handle on hover */
 .sidebar::-webkit-scrollbar-thumb:hover {
-    background: #008ae8; 
+    background: #888888; 
 }

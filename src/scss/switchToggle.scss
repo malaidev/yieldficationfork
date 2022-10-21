@@ -1,5 +1,7 @@
 /* Rounded sliders */
+@use 'customButton';
 .switch-toggle {
+    
 	position: relative;
 	display: inline-block;
 	width: 45px;
@@ -36,7 +38,7 @@
         &:checked {
             + {
                 .slider {
-                    background-color: #b73197;
+                    background-color: customButton.$btn-bg-color;
                     &:before {
                         -webkit-transform: translateX(20px);
                         -ms-transform: translateX(20px);

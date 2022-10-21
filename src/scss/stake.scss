@@ -1,50 +1,59 @@
+@use 'layout';
 $light-gray-color: rgb(213 214 225);
 $dark-blue-color: rgb(17, 20, 61);
-$token-amount-border-color: rgb(199, 193, 193);
 .stake-content {
+    background: layout.$dark-bg-color;
     .stake-area {
         border: 1px solid #80808038;
         .token-staking {
             div {
                 flex: 1;
-                background-color: $light-gray-color;
+                border: 1px solid layout.$dark-div-border;
+                color: $light-gray-color;
                 cursor: pointer;
-                color: $dark-blue-color;
                 p {
                     letter-spacing: 0.7px;
                 }
             }
             div.active {
-                background-color: $dark-blue-color;
-                color: #fff;
+                color: rgba(0, 255, 34, 0.863);
+            }
+            div:hover {
+                position: relative;
+                top: -4px;
             }
         }
         .token-detail {
-            background-color: rgba(255,252,225);
-            color: rgba(245,158,11);
+            background-color: layout.$warn-bg-color;
+            color: layout.$warn-color;
         }
         .lock-period {
             div {
-                background-color: $light-gray-color;
+                border: 1px solid layout.$dark-div-border;
                 cursor: pointer;
                 color: $dark-blue-color;
                 p {
                     margin: 0 !important;
                     font-weight: bold;
-                    font-size: 16px;
+                }
+                p:nth-child(2) {
+                    color: #fff;
+                }
+                p.active {
+                    color: rgba(0, 255, 34, 0.863) !important;
                 }
             }
-            div.active {
-                background-color: $dark-blue-color;
-                color: #fff;
+            div:hover {
+                position: relative;
+                top: -4px;
             }
         }
         .staking-amount {
             .token-amount-preview {
                 div {
-                    border: 1px solid $token-amount-border-color;
+                    border: 1px solid layout.$dark-div-border;
                     button {
-                        background-color: #fff;
+                        background-color: layout.$dark-bg-color;
                         border: 0;
                         bottom: 1px;
                         top: 1px;
@@ -53,7 +62,7 @@ $token-amount-border-color: rgb(199, 193, 193);
                         z-index: 1;
                     }
                     button::before {
-                        background-color: rgb(177, 174, 174);
+                        background-color: $light-gray-color;
                         content: "";
                         position: absolute;
                         top: 50%;
@@ -63,7 +72,7 @@ $token-amount-border-color: rgb(199, 193, 193);
                         width: 18px;
                     }
                     button:nth-child(3)::after {
-                        background-color: rgb(177, 174, 174);
+                        background-color: $light-gray-color;
                         content: "";
                         position: absolute;
                         top: 50%;
@@ -74,9 +83,10 @@ $token-amount-border-color: rgb(199, 193, 193);
                     }
                     input[type=number] {
                         border: 0;
-                        border-left: 1px solid $token-amount-border-color;
-                        border-right: 1px solid $token-amount-border-color;
-                        background-color: #f8f8f8;
+                        border-left: 1px solid layout.$dark-div-border;
+                        border-right: 1px solid layout.$dark-div-border;
+                        background-color: layout.$dark-bg-color;
+                        color: #fff;
                     }
                     input[type=number]:focus-visible {
                         outline: unset;
@@ -91,7 +101,7 @@ $token-amount-border-color: rgb(199, 193, 193);
                 }
             }
             .token-amount-control {
-                border: 1px solid $token-amount-border-color;
+                border: 1px solid layout.$dark-div-border;
                 border-top: none;
                 input[type=range] {
                     -webkit-appearance: none;
@@ -116,7 +126,7 @@ $token-amount-border-color: rgb(199, 193, 193);
                 }
             }
             .token-buy {
-                border: 1px solid $token-amount-border-color;
+                border: 1px solid layout.$dark-div-border;
                 border-top: none;
                 button {
                     background: none;
@@ -126,15 +136,14 @@ $token-amount-border-color: rgb(199, 193, 193);
                 }
             }
             .stake-btn {
-                background: $light-gray-color;
                 letter-spacing: .3px;
-                color:rgb(64 63 63);
                 font-size: 20px;
+                padding: 10px 0px;
             }
         }
     }
     .free-token {
-        background-color: $dark-blue-color;
+        background-color: layout.$dark-div-bg;
         color: #fff;
     }
 }

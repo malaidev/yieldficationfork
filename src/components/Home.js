@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import '../scss/layout.scss';
 
 const Home = ({props}) => {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     let navigate = useNavigate();
     let location = useLocation();
 
@@ -36,10 +36,10 @@ const Home = ({props}) => {
             <div className="app-container">
                 <Header />
                 <Row>
-                    <Col lg={4} md={4} sm={12}>
+                    <Col lg={4} md={12} sm={12}>
                         <SideBar />
                     </Col>
-                    <Col lg={8} md={8} sm={12}>
+                    <Col lg={8} md={12} sm={12}>
                         <div className="main-content">
                             <Outlet />
                         </div>

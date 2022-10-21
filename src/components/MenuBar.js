@@ -33,7 +33,14 @@ const MenuBar = (props) => {
     }, [location]);
     const handleHamburger = () => {
         setShow(!show);
-      }
+    }
+    
+    const handleMenu = (e) => {
+        if (e.target.className == "mobile-menu") {
+            setShow(!show);
+        }
+    }
+
     return (
         <>
             {
@@ -72,9 +79,9 @@ const MenuBar = (props) => {
                 <>
                     {
                         show ? 
-                        <div className="d-flex mobile-menu position-fixed">
+                        <div className="mobile-menu" onClick={handleMenu}>
                             <Col className="mobile-menu-area">
-                                <div className="menu-close-area d-flex justify-content-end">
+                                <div className="menu-close-area d-flex justify-content-end me-2 mt-1">
                                     <Button onClick={handleHamburger} className="btn-close position-relative" style={{zIndex: 10}}><FaTimes /></Button>
                                 </div>
                                 <Col className="">

@@ -1,15 +1,22 @@
+@use 'layout';
 $price-bg-color: rgba(17,20,61);
 .dashboard-content {
     .price-effect {
-        background-image: url("../assets/effect.svg");
-        background-repeat: no-repeat;
-        background-size: 120%;
-        background-position: bottom;
         background-color: $price-bg-color;
         color: white;
         padding: 3rem 5rem;
         height: 100%;
         padding-bottom: 9em;
+        overflow: hidden;
+        img {
+            filter: invert(64%) sepia(33%) saturate(843%) hue-rotate(79deg) brightness(92%) contrast(91%);
+            position: absolute;
+            width: 100%;
+            height: 48%;
+            left: 0px;
+            opacity: 0.4;
+            visibility: visible;
+        }
     }
     .total-tokens {
         div {
@@ -21,17 +28,11 @@ $price-bg-color: rgba(17,20,61);
 }
 .dark {
     .dashboard-content {
-        background-color: #22233a !important;
+        background: layout.$dark-bg-color;
         color: #fff !important;
         .price-effect {
             $price-bg-color: rgba(27,28,48);
-            background-color: $price-bg-color;
-        }
-        .bg-gradient-to-r {
-            --tw-gradient-to: #161825;
-            --tw-gradient-from: #1b1c30;
-            --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(27,28,48,0));
-            background-image: linear-gradient(90deg,var(--tw-gradient-stops));
+            background-color: layout.$dark-div-bg;
         }
         .text-purple-300 {
             color: #fff;

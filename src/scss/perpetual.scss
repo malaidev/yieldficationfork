@@ -1,20 +1,25 @@
+@use 'layout';
 @use 'stake';
+@use 'customButton';
 .perpetual-content {
+    background: layout.$dark-bg-color;
     .crypto-trading {
-        border: 1px solid stake.$light-gray-color;
+        border: 1px solid layout.$dark-div-border;
         .crypto-price {
-            border-bottom: 1px solid stake.$light-gray-color;
+            border-bottom: 1px solid layout.$dark-div-border;
             button {
-                border: 0;
+                border-bottom: 1px solid layout.$dark-div-border;
                 border-radius: 2rem;
-                background-color: stake.$light-gray-color;
-                color: stake.$dark-blue-color;
                 font-weight: bold;
                 padding: 7px 22px;
                 height: fit-content;
             }
+            button:hover {
+                position: relative;
+                top: -4px;
+            }
             button.active {
-                background-color: stake.$dark-blue-color;
+                background-color: customButton.$btn-bg-color;
                 color: #fff;
             }
         }
@@ -27,7 +32,6 @@
                 }
             }
             button {
-                border: 2px solid #000;
                 font-size: 14px;
             }
         }
@@ -44,24 +48,26 @@
     }
     .positions {
         button {
-            border: 1px solid rgb(248, 246, 246);
+            border: 1px solid layout.$dark-div-border;
             background: none;
             font-weight: bold;
             border-radius: 4px;
             padding: 8px 2.5rem;
             font-size: 18px;
+            color: stake.$light-gray-color;
         }
         button.active {
-            background-color: rgb(35, 101, 245);
+            background-color: customButton.$btn-bg-color;
             color: #fff;
         }
         button:hover {
-            background-color: rgb(215 232 254);
+            position: relative;
+            top: -4px;
         }
     }
     .search-reward {
         .search-nft {
-            border: 1px solid rgb(34, 33, 33);
+            border: 1px solid rgb(0, 0, 0);
             font-size: 14px;
             label {
                 opacity: .65;
@@ -70,6 +76,11 @@
                 border: 0;
                 width: 5rem;
                 font-size: 14px;
+                color: #fff;
+                background: layout.$dark-bg-color;
+            }
+            input:focus {
+                color: #fff;
             }
             input:focus-visible {
                 outline: unset;
@@ -79,11 +90,12 @@
                 background: none;
                 opacity: .6;
                 padding: 8px 12px;
-                border-left: 1px solid rgb(175, 175, 175);
+                border-left: 1px solid #000;
+                color: #fff;
             }
         }
     }
     .no-position {
-        border: 1px solid rgb(226, 227, 228);
+        border: 1px solid layout.$dark-div-border;
     }
 }

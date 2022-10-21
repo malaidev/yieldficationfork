@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { BsFillExclamationDiamondFill } from 'react-icons/bs';
 import { getConstData } from '../utils/getConstData';
-import vesting from '../assets/vesting.svg';
+import vesting from '../assets/lock.png';
 import empty from '../assets/empty.svg';
 import CustomButton from '../components/Button';
 import { MenuContext } from '../context/MenuConnectContext';
@@ -31,34 +31,34 @@ const Nft = () => {
                             <div className="overflow-hidden px-5 pt-3 bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                 <h4 className="fs-3 fw-bold m-0">0</h4>
                                 <p className="">HAVEN Unlocked</p>  
-                                <img className="bg-img-opacity" src={vesting} />
+                                <img className="bg-img-opacity green-filter" width="180" height="110" src={vesting} />
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={12} className="pt-3">
                             <div className="overflow-hidden px-5 pt-3 bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                 <h4 className="fs-3 fw-bold m-0">0</h4>
                                 <p className="">Locked btw. 0 & 30 days</p>  
-                                <img className="bg-img-opacity" src={vesting} />
+                                <img className="bg-img-opacity green-filter" width="180" height="110" src={vesting} />
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={12} className="pt-3">
                             <div className="overflow-hidden px-5 pt-3 bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                 <h4 className="fs-3 fw-bold m-0">0</h4>
                                 <p className="">Locked btw. 30 & 120 days</p>  
-                                <img className="bg-img-opacity" src={vesting} />
+                                <img className="bg-img-opacity green-filter" width="180" height="110" src={vesting} />
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={12} className="pt-3">
                             <div className="overflow-hidden px-5 pt-3 bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                 <h4 className="fs-3 fw-bold m-0">0</h4>
                                 <p className="">Locked &#62; 120 days</p>  
-                                <img className="bg-img-opacity" src={vesting} />
+                                <img className="bg-img-opacity green-filter" width="180" height="110" src={vesting} />
                             </div>
                         </Col>
                     </Row>
                 </div>
                 <div className="mt-5">
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between flex-wrap">
                         <h5 className="text-start">Staked NFTs</h5>
                         <div className="d-flex gap-3 search-reward">
                             <div className="d-flex rounded-5 search-nft align-items-center px-3">
@@ -67,7 +67,7 @@ const Nft = () => {
                                 <button>Search</button>
                                 <button>Clear</button>
                             </div>
-                            <button className="claim-all-btn rounded-5 py-2 px-4 fw-bold text-serif">Claim All Rewards</button>
+                            <CustomButton className='py-2 px-4'>Claim All Rewards</CustomButton>
                         </div>
                     </div>
                     <div className='py-5 text-gray-500'>
