@@ -25,12 +25,12 @@ const Nft = () => {
                     {warnTxt}
                 </div>
                 <div className="mb-3">
-                    <h5 className="text-start">My Staked Lockup Stats (In YDF Value)</h5>
+                    <h5 className="text-start">My Staked Lockup Stats (In HAVEN Value)</h5>
                     <Row className='mt-3 text-serif lockup-stak'>
                         <Col lg={6} md={6} sm={12} className="pt-3">
                             <div className="overflow-hidden px-5 pt-3 bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                 <h4 className="fs-3 fw-bold m-0">0</h4>
-                                <p className="">YDF Unlocked</p>  
+                                <p className="">HAVEN Unlocked</p>  
                                 <img className="bg-img-opacity" src={vesting} />
                             </div>
                         </Col>

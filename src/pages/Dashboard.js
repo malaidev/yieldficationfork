@@ -37,7 +37,7 @@ const Dashboard = (props) => {
                                <div className="price-effect rounded-5 d-flex flex-column align-items-center">
                                 <div className="fw-bold">
                                         <h1>$0.0754</h1>
-                                        <p>YDF Price</p>
+                                        <p>HAVEN Price</p>
                                     </div>
                                     <div className="">
                                         <h2 className='bg-gradient-txt bg-clip-text'>456,328,209</h2>
@@ -51,15 +51,15 @@ const Dashboard = (props) => {
                                         <h4 className="fs-3 fw-bold">
                                             247,025,102
                                         </h4>
-                                        <h4 className="fw-bold">(YDF)</h4>  
-                                        <h6 className='fs-5'>Total YDF Staked</h6>
+                                        <h4 className="fw-bold">(HAVEN)</h4>  
+                                        <h6 className='fs-5'>Total HAVEN Staked</h6>
                                         <img className="bg-img-opacity" src={stake} />
                                     </Col>
                                     <Col lg={5} md={12} sm={12} className="bg-gradient-to-r position-relative rounded-4 d-flex flex-column align-items-start text-start">
                                         <h4 className="fs-3 fw-bold">
                                             34,049,277
                                         </h4>
-                                        <h4 className="fw-bold">(YDF)</h4>  
+                                        <h4 className="fw-bold">(HAVEN)</h4>  
                                         <h6>Total Yield Vesting</h6>
                                         <img className="bg-img-opacity" src={vesting} />
                                     </Col>
@@ -67,7 +67,7 @@ const Dashboard = (props) => {
                                         <h4 className="fs-3 fw-bold">
                                             1,281
                                         </h4>
-                                        <h4 className="fw-bold">(sYDF)</h4>  
+                                        <h4 className="fw-bold">(sHAVEN)</h4>  
                                         <h6>Total Single Sided NFTs</h6>
                                         <img className="bg-img-opacity" src={single} />
                                     </Col>
@@ -75,7 +75,7 @@ const Dashboard = (props) => {
                                         <h4 className="fs-3 fw-bold">
                                             184
                                         </h4>
-                                        <h4 className="fw-bold">(slYDF)</h4>  
+                                        <h4 className="fw-bold">(slHAVEN)</h4>  
                                         <h6>Total LP NFTs</h6>
                                         <img className="bg-img-opacity" src={pair} />
                                     </Col>

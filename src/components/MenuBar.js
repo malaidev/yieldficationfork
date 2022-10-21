@@ -6,7 +6,7 @@ import { RiDatabase2Fill, RiDashboardFill } from 'react-icons/ri';
 import { GiStripedSun } from 'react-icons/gi';
 import { Col, Button } from 'react-bootstrap';
 import { getWindowDimensions } from '../utils/GlobalFuns';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 import { MenuContext } from '../context/MenuConnectContext';
 import cls from 'classnames';
 
@@ -41,7 +41,7 @@ const MenuBar = (props) => {
                     <Col className="menu-content">
                         <Col className="py-3 mt-2">
                             <Link to="/dashboard">
-                                <img src={logo} width="25"/>
+                                <img src={logo} width="35"/>
                             </Link>
                         </Col>
                         <Col className="menubar d-flex flex-column mt-5 mb-3 gap-5">
@@ -83,22 +83,22 @@ const MenuBar = (props) => {
                                     </Link>
                                 </Col>
                                 <Col className="menubar d-flex flex-column ps-3 pe-5 me-5 align-items-start mt-5 mb-3 gap-4">
-                                    <Link className="active" to="/dashboard">
+                                    <Link className={cls(path=='/dashboard' && 'active')} to="/dashboard">
                                         <RiDashboardFill/>&nbsp;&nbsp; Dashboard
                                     </Link>
-                                    <Link to="/stake">
+                                    <Link className={cls(path=='/stake' && 'active')} to="/stake">
                                         <RiDatabase2Fill/>&nbsp;&nbsp; Stake!
                                     </Link>
-                                    <Link to="/nft">
+                                    <Link className={cls(path=='/nft' && 'active')} to="/nft">
                                         <BsCardImage/>&nbsp;&nbsp; NFTs
                                     </Link>
-                                    <Link to="/vesting">
+                                    <Link className={cls(path=='/vesting' && 'active')} to="/vesting">
                                         <BsBriefcaseFill/>&nbsp;&nbsp; Rewards
                                     </Link>
-                                    <Link to="/perpetual">
+                                    <Link className={cls(path=='/perpetual' && 'active')} to="/perpetual">
                                         <BsBarChartLineFill/>&nbsp;&nbsp; Futures Trading
                                     </Link>
-                                    <Link to="/leaderboard">
+                                    <Link className={cls(path=='/leaderboard' && 'active')} to="/leaderboard">
                                         <BsStars/>&nbsp;&nbsp; Leaderboard
                                     </Link>
                                     <Link onClick={props.toggleTheme} className={cls(props.modeState=='dark' &&'dark-mode-activate')}>
