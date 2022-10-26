@@ -9,6 +9,7 @@ import { getWindowDimensions } from '../utils/GlobalFuns';
 import logo from '../assets/logo2.png';
 import { useContext, useEffect, useState } from 'react';
 import { MenuContext } from '../context/MenuConnectContext';
+import { connectWallet } from './ConnectWalletModal';
 
 
 function Header() {
@@ -41,7 +42,7 @@ function Header() {
         <div className="d-flex gap-2" id="basic-navbar-nav">
             <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#home"><img src={logo} width="25"/>$0.0710</Nav.Link>
             <Nav.Link className="round-1x5 d-flex align-items-center justify-content-center gap-2" href="#link"> <IoDiamondOutline />$1,288.79</Nav.Link>
-            <CustomButton className="">Connect Wallet</CustomButton>
+            <CustomButton className="" onClick={ connectWallet }>Connect Wallet</CustomButton>
         </div>
       </Container>
     </Navbar>
