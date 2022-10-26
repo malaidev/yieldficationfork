@@ -1,0 +1,1 @@
+export { connectWallet } from './WalletWeb3Modal';
